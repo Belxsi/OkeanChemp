@@ -10,14 +10,12 @@ public class Player : MonoBehaviour
     void Start()
     {
         physicMove = GetComponent<PhysicMove>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-         physicMove.MovementControl(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),ref stats.speed);
+        physicMove.MovementControl(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),ref stats.speed);
     }
 }
 [Serializable]
