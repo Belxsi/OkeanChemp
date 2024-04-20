@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    GameObject collectInterface;
+    public GameObject collectInterface;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,17 +16,18 @@ public class ItemCollector : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.CompareTag("Player"))
             collectInterface.SetActive(true);
+        //collectInterface.SetActive(true);
+        Debug.Log(collision.gameObject.tag);
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.CompareTag("Player"))
             collectInterface.SetActive(false);
     }
 }
