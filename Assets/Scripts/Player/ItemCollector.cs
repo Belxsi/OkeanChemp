@@ -16,17 +16,18 @@ public class ItemCollector : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.CompareTag("Player"))
             collectInterface.SetActive(true);
-        Debug.Log("Collition!");
+        //collectInterface.SetActive(true);
+        Debug.Log(collision.gameObject.tag);
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.CompareTag("Player"))
             collectInterface.SetActive(false);
     }
 }
