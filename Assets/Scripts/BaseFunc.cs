@@ -24,6 +24,7 @@ public class BaseFunc : MonoBehaviour
 
             IsLoad = true;
             AddPrefab("Item");
+            AddPrefab("Bullet");
             AddPrefab("ItemInterface");
         }
     }
