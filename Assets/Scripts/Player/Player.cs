@@ -7,9 +7,12 @@ public class Player : MonoBehaviour
 {
     PhysicMove physicMove;
     public Stats stats;
+    public Inventory inventory;
+    public static Player me;
     void Start()
     {
         physicMove = GetComponent<PhysicMove>();
+        me = this;
     }
 
     // Update is called once per frame
