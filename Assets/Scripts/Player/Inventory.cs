@@ -15,10 +15,12 @@ public class Inventory : MonoBehaviour
         if (items.TryGetValue(io.item.name,out Item value))
         {
             value.count++;
+
         }
         else
         {
             items.Add(io.item.name, io.item);
+            InventoryInterface.me.AddSlot(io.item);
         }
     }
     public void Remove(ItemObject io)
