@@ -8,17 +8,18 @@ public class ShootControl : MonoBehaviour
 
     public static Vector2 shootDir;
     public GameObject aim;
-    GameObject bullet;
+    public GameObject bullet;
     void SetVector()
     {
         shootDir = BaseFunc.GetForMouseDir(transform.position);
         aim.transform.localPosition = shootDir;
-        bullet = GameObject.FindWithTag("Bullet");
+        
 
     }
     void Start()
     {
-        
+        BaseFunc.AllLoadPrefab();
+        bullet = BaseFunc.prefabs["Bullet"];
     }
 
     void Update()
