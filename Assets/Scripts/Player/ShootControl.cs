@@ -11,7 +11,7 @@ public class ShootControl : MonoBehaviour
     GameObject bullet;
     void SetVector()
     {
-        shootDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        shootDir = BaseFunc.GetForMouseDir(transform.position);
         aim.transform.localPosition = shootDir;
         bullet = GameObject.FindWithTag("Bullet");
 

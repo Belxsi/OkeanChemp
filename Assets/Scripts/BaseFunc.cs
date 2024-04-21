@@ -11,6 +11,12 @@ public class BaseFunc : MonoBehaviour
     {
         prefabs.Add(nam, (GameObject)PrefabLoader.Load("Prefabs", nam));
     }
+    public static Vector2 GetForMouseDir(Vector2 pos)
+    {
+       Vector2 posmos =Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return (posmos - pos).normalized;
+
+    }
     public static void AllLoadPrefab()
     {
         if (!IsLoad)
