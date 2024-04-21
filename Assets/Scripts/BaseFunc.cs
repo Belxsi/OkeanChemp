@@ -15,6 +15,7 @@ public class BaseFunc : MonoBehaviour
     {
         if (!IsLoad)
         {
+
             IsLoad = true;
             AddPrefab("Item");
             AddPrefab("ItemInterface");
