@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 662381377}
   - component: {fileID: 662381381}
   - component: {fileID: 662381382}
+  - component: {fileID: 662381383}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -576,7 +577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     life: 100
-    speed: 500
+    speed: 1000
+  inventory: {fileID: 662381383}
 --- !u!50 &662381378
 Rigidbody2D:
   serializedVersion: 4
@@ -628,6 +630,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aim: {fileID: 1627473526}
   bullet: {fileID: 0}
+--- !u!114 &662381383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662381373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24f3fab6b8803244836402c35f55bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &667745996
 PrefabInstance:
   m_ObjectHideFlags: 0

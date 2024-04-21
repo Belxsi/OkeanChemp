@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6285782558675842537}
   - component: {fileID: 6285782558675842538}
   - component: {fileID: 583004351504632283}
+  - component: {fileID: 1883324660177683220}
   m_Layer: 0
   m_Name: Square
   m_TagString: Item
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -125,6 +126,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectInterface: {fileID: 6285782559125640979}
+  active: 0
+  itemO: {fileID: 1883324660177683220}
+--- !u!114 &1883324660177683220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285782558675842548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac452f50893bb114aa13f59f855b7bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    count: 0
+    name: apple
 --- !u!1 &6285782558749054727
 GameObject:
   m_ObjectHideFlags: 0
