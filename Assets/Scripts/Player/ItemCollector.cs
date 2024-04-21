@@ -17,6 +17,7 @@ public class ItemCollector : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E)){
                 Player.me.inventory.Add(itemO);
+
                 Destroy(gameObject);
             }
         }
