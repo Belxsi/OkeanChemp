@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour
 {
     public Item item;
@@ -17,5 +18,10 @@ public class Slot : MonoBehaviour
         }
         sr.sprite = sprite;
         counter.text = item.count+"";
+    }
+    public void PointClick()
+    {
+        item.Iteract.Use();
+        Player.me.inventory.Remove(item.name);
     }
 }

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Stats stats;
     public Inventory inventory;
     public static Player me;
+    public Life life;
     void Start()
     {
         physicMove = GetComponent<PhysicMove>();
@@ -26,4 +27,21 @@ public class Stats
 {
     public float life;
     public float speed;
+}
+[Serializable]
+public class Life
+{
+    public float life;
+    public bool dead;
+    public void Damage(float damage)
+    {
+        if (!dead)
+        {
+            life -= damage;
+            if (life < 0)
+            {
+                dead = true;
+            }
+        }
+    }
 }

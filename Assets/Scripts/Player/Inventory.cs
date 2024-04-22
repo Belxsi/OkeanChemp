@@ -75,4 +75,5 @@ public class Item
 {
     public int count;
     public string name;
+    public IIteractionItem Iteract;
 }
