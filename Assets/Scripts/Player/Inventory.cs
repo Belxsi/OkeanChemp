@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
         else
         {
             items.Add(io.item.name, io.item);
+            io.item.count++;
             InventoryInterface.me.AddSlot(io.item);
         }
     }
@@ -47,19 +48,17 @@ public class Inventory : MonoBehaviour
         if (items.TryGetValue(name, out Item value))
         {
 
-            if (value.count > 1)
+            if (value.count > 0)
             {
                 value.count--;
             }
             else
             {
                 items.Remove(name);
+
             }
         }
-        else
-        {
-            items.Add(name,value);
-        }
+       
     }
     public void Replace()
     {

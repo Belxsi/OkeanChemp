@@ -8,7 +8,7 @@ public class BottleOkean :  MonoBehaviour,IIteractionItem
     public void Start()
     {
         Object = GetComponent<ItemObject>();
-        Object.Iteract = this;
+        Object.item.Iteract = this;
     }
    
     public void Use()
