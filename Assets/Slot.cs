@@ -23,5 +23,6 @@ public class Slot : MonoBehaviour
     {
         item.Iteract.Use();
         Player.me.inventory.Remove(item.name);
+        if (item.count <= 0) Destroy(gameObject);
     }
 }
