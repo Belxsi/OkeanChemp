@@ -9,13 +9,31 @@ public class AIPhysicMove : MonoBehaviour
     public TargetMove target;
     void Start()
     {
-        
+        agent.updateRotation = false;
+        agent.updatePosition = true;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (target != null)
+        {
+            if (!target.good)
+            {
+                
+                agent.SetDestination(target.pos);
+                
+                if (Vector2.Distance(target.pos, transform.position)<target.mindist)
+                {
+                    target.good = true;
+                }
+            }
+            else
+            {
+                target = null;
+            }
+        }
     }
 }
 public class TargetMove
