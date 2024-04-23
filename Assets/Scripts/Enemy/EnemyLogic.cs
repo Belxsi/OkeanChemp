@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Enemy enemy;
+
     void Start()
     {
         
