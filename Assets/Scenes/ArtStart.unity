@@ -645,7 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     life: 100
-    speed: 1000
+    speed: 300
   inventory: {fileID: 223169623}
   life:
     life: 100
@@ -3565,7 +3565,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1930700249}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9984132
+  m_Size: 0.99998903
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4293,7 +4293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.700027, y: -5.7815833}
+  m_AnchoredPosition: {x: 4.700027, y: -5.7819085}
   m_SizeDelta: {x: -4.7, y: 0}
   m_Pivot: {x: 0.0000000013969839, y: 0.98}
 --- !u!114 &1683346307
@@ -5612,9 +5612,10 @@ GameObject:
   - component: {fileID: 1997231100}
   - component: {fileID: 1997231099}
   - component: {fileID: 1997231098}
-  - component: {fileID: 1997231097}
   - component: {fileID: 1997231096}
   - component: {fileID: 1997231095}
+  - component: {fileID: 1997231103}
+  - component: {fileID: 1997231102}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -5656,26 +5657,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8facd8b3bd7c14644b240091d3726e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  physicMove: {fileID: 1997231102}
   stats:
     life: 0
     speed: 0
   life:
     life: 0
     dead: 0
---- !u!114 &1997231097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997231094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc932cac2efddd40b179822752f5aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aim: {fileID: 124175396}
-  bullet: {fileID: 0}
 --- !u!58 &1997231098
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5704,7 +5692,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -5773,7 +5761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997231094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.07, y: 0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5781,6 +5769,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997231102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997231094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859cc81db43f85c4d852089448932ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1997231095}
+--- !u!114 &1997231103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997231094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ebd68eb038893458744a3121816b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1997231096}
 --- !u!1 &2132769664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6285782558675842548, guid: d6dbff1506385294caffa10f127d714f, type: 3}

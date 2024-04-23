@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyLogic : MonoBehaviour
 {
     public Enemy enemy;
-    
+    public float timeout,time=1;
     void Start()
     {
         
@@ -14,14 +14,24 @@ public class EnemyLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemy.physicMove.target == null) {
-            int i = 0;
-            if (Vector2.Distance(Player.me.transform.position, transform.position) > 3)
+        if (timeout <= 0)
+        {
+            if (enemy.physicMove.target == null)
             {
-                i = 1;
-            } else i = -1;
-    
-            enemy.physicMove.target = new(Player.me.transform.position*i + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+                int i = 0;
+                if (Vector2.Distance(Player.me.transform.position, transform.position) > 3)
+                {
+                    i = 1;
+                }
+                else i = -1;
+                
+                timeout = time;
+                enemy.physicMove.target = new(Player.me.transform.position * i + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+            }
+        }
+        else
+        {
+            timeout -= Time.deltaTime;
         }
     }
 }

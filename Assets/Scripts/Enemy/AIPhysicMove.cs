@@ -7,6 +7,7 @@ public class AIPhysicMove : MonoBehaviour
     // Start is called before the first frame update
     public NavMeshAgent agent;
     public TargetMove target;
+    public float timeout, time = 1f;
     void Start()
     {
         agent.updateRotation = false;
@@ -19,12 +20,25 @@ public class AIPhysicMove : MonoBehaviour
     {
         if (target != null)
         {
+            if (timeout <= 0)
+            {
+                target.good = true;
+                timeout = time;
+            }
+            else
+            {
+                timeout -=Time.deltaTime;
+            }
             if (!target.good)
             {
                 
                 agent.SetDestination(target.pos);
                 
                 if (Vector2.Distance(target.pos, transform.position)<target.mindist)
+                {
+                    target.good = true;
+                }
+                if (agent.velocity.sqrMagnitude < 1f)
                 {
                     target.good = true;
                 }
