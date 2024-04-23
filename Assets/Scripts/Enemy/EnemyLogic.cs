@@ -14,7 +14,14 @@ public class EnemyLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.physicMove.target==null)
-        enemy.physicMove.target = new(Player.me.transform.position);
+        if (enemy.physicMove.target == null) {
+            int i = 0;
+            if (Vector2.Distance(Player.me.transform.position, transform.position) > 3)
+            {
+                i = 1;
+            } else i = -1;
+    
+            enemy.physicMove.target = new(Player.me.transform.position*i + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+        }
     }
 }
