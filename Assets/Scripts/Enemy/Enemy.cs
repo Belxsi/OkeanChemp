@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    PhysicMove physicMove;
+    public AIPhysicMove physicMove;
     public Stats stats;
   
   
     public Life life;
     void Start()
     {
-        physicMove = GetComponent<PhysicMove>();
-       
+        physicMove = GetComponent<AIPhysicMove>();
+        
+        
     }
 
     // Update is called once per frame
