@@ -11,7 +11,9 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = ShootControl.shootDir * bulletSpeed;
+              rb.velocity = ShootControl.shootDir * bulletSpeed;
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y,-Vector2.Angle(Vector2.up,ShootControl.shootDir));
+
         if (rb.velocity.magnitude != 0)
             Invoke("Delete", lifeTime);
     }
