@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public AIPhysicMove physicMove;
     public Stats stats;
+    
   
   
     public Life life;
