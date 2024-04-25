@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        physicMove.MovementControl(Move(new (){KeyCode.W, KeyCode.S,KeyCode.D,KeyCode.R }),ref stats.speed);
+        physicMove.MovementControl(Move(new (){KeyCode.W, KeyCode.S,KeyCode.D,KeyCode.A }),ref stats.speed);
     }
 }
 [Serializable]
