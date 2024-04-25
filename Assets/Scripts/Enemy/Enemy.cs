@@ -6,9 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public AIPhysicMove physicMove;
     public Stats stats;
-    
-  
-  
+    public RoomFighter room;
+    public Sprite DeadState;
+    public EnemyLogic el;
     public Life life;
     void Start()
     {
@@ -16,7 +16,16 @@ public class Enemy : MonoBehaviour
         
         
     }
-
+    public void Update()
+    {
+        if (life.dead)
+        {
+            BaseFunc.AllLoadPrefab();
+            Instantiate(BaseFunc.prefabs["DeadState"], transform.position, Quaternion.identity).GetComponent<SpriteRenderer>().sprite=DeadState;
+            room.ememys.Remove(el);
+            Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
-  
+
 }

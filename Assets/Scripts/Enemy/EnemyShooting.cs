@@ -18,7 +18,7 @@ public class EnemyShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateLocal()
     {
         if (tempReloadSpeed <= 0)
         {

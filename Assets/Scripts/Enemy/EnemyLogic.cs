@@ -6,6 +6,7 @@ public class EnemyLogic : MonoBehaviour
 {
     public Enemy enemy;
     public float timeout,time=1;
+    public EnemyShooting es;
     void Start()
     {
         
@@ -14,6 +15,7 @@ public class EnemyLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        es.UpdateLocal();
         if (timeout <= 0)
         {
             if (enemy.physicMove.target == null)

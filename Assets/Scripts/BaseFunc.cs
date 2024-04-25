@@ -28,6 +28,7 @@ public class BaseFunc : MonoBehaviour
             AddPrefab("Bullet");
             AddPrefab("EnemyBullet");
             AddPrefab("ItemInterface");
+            AddPrefab("DeadState");
         }
     }
 }
