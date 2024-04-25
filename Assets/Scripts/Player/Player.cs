@@ -17,11 +17,20 @@ public class Player : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         me = this;
     }
-
+    bool IsWalking()
+    {
+        return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);
+    }
     // Update is called once per frame
     void Update()
     {
-        physicMove.MovementControl(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),ref stats.speed);
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
+        physicMove.MovementControl(new Vector2(hor, ver), ref stats.speed);
+        if (IsWalking())
+            playerAnim.SetBool("isWalking", true);
+        else
+            playerAnim.SetBool("isWalking", true);
     }
 }
 [Serializable]

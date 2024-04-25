@@ -9,12 +9,13 @@ public class ShootControl : MonoBehaviour
     public static Vector2 shootDir;
     public GameObject aim;
     public GameObject bullet;
+    Animator playerAnim;
     void SetVector()
     {
         shootDir = BaseFunc.GetForMouseDir(transform.position);
         aim.transform.localPosition = shootDir;
-        
 
+        playerAnim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -31,5 +32,6 @@ public class ShootControl : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, gameObject.transform);
+        playerAnim.SetTrigger("Shoot");
     }
 }
