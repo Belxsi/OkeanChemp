@@ -21,7 +21,7 @@ public class RoomFighter : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if ((!good) & (active!))
+        if ((!good) & (!active))
             if (collision.CompareTag("Player"))
             {
 
@@ -33,7 +33,7 @@ public class RoomFighter : MonoBehaviour
     {
         if (active)
         {
-            if (wallsset!)
+            if (!wallsset)
             {
                 for (int i = 0; i < walls.Count; i++)
                 {
@@ -56,6 +56,6 @@ public class RoomFighter : MonoBehaviour
                 }
             }
         }
-        
+    
     }
 }

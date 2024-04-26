@@ -9,13 +9,12 @@ public class ShootControl : MonoBehaviour
     public static Vector2 shootDir;
     public GameObject aim;
     public GameObject bullet;
-    Animator playerAnim;
+    public Animator playerAnim;
+    public float shootTime;
     void SetVector()
     {
         shootDir = BaseFunc.GetForMouseDir(transform.position);
         aim.transform.localPosition = shootDir;
-
-        playerAnim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -27,11 +26,14 @@ public class ShootControl : MonoBehaviour
     {
         SetVector();
         if (Input.GetKeyDown(shootingKey))
-            Shoot();
+        {
+            playerAnim.SetTrigger("Shoot");
+            Invoke("Shoot", shootTime);
+        }
+            
     }
     void Shoot()
     {
         Instantiate(bullet, gameObject.transform);
-        playerAnim.SetTrigger("Shoot");
     }
 }

@@ -8,6 +8,8 @@ public class EnemyShooting : MonoBehaviour
     public float reloadSpeed;
     float tempReloadSpeed;
     GameObject bullet;
+    public Animator enemyAnim;
+    public float shootTime;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,8 @@ public class EnemyShooting : MonoBehaviour
     {
         if (tempReloadSpeed <= 0)
         {
-            Shoot();
+            Invoke("Shoot", shootTime);
+            enemyAnim.SetTrigger("Shoot");
             tempReloadSpeed = reloadSpeed;
         }
         else
