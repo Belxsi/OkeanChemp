@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,10 +11,12 @@ public class Player : MonoBehaviour
     public Inventory inventory;
     public static Player me;
     public Life life;
+    public Animator playerAnim;
     void Start()
     {
         physicMove = GetComponent<PhysicMove>();
         me = this;
+        life.life = stats.life;
     }
 
     // Update is called once per frame
@@ -43,6 +46,22 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        Vector2 pos = Move(new() { KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A });
+
+        physicMove.MovementControl(pos,ref stats.speed);
+
+        if (pos == Vector2.zero)
+            playerAnim.SetBool("IsWalking", false);
+        else
+            playerAnim.SetBool("IsWalking", true);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            life.Damage(collision.gameObject.GetComponent<EnemyBullet>().damage);
+            Destroy(collision.gameObject);
+        }
         physicMove.MovementControl(Move(new (){KeyCode.W, KeyCode.S,KeyCode.D,KeyCode.A }),ref stats.speed);
         
     }

@@ -6,8 +6,12 @@ public class Shooting : MonoBehaviour
 {
     public float bulletSpeed;
     public float lifeTime;
+<<<<<<< HEAD
     public float damage=15;
     public int family=0;
+=======
+    public float damage;
+>>>>>>> origin/Art
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()

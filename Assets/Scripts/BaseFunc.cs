@@ -15,6 +15,7 @@ public class BaseFunc : MonoBehaviour
     {
        Vector2 posmos =Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return (posmos - pos).normalized;
+       
 
     }
     public static void AllLoadPrefab()
