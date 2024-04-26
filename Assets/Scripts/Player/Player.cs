@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
             playerAnim.SetBool("IsWalking", false);
         else
             playerAnim.SetBool("IsWalking", true);
+        Dead();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
