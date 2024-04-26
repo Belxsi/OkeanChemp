@@ -44,6 +44,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         physicMove.MovementControl(Move(new (){KeyCode.W, KeyCode.S,KeyCode.D,KeyCode.A }),ref stats.speed);
+        
+    }
+    public void Dead()
+    {
+        if (life.dead)
+        {
+            BaseFunc.AllLoadPrefab();
+            Instantiate( BaseFunc.prefabs["DeadMenu"]);
+        }
     }
 }
 [Serializable]

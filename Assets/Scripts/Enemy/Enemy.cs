@@ -10,10 +10,11 @@ public class Enemy : MonoBehaviour
     public Sprite DeadState;
     public EnemyLogic el;
     public Life life;
+    public int family;
     void Start()
     {
         physicMove = GetComponent<AIPhysicMove>();
-        
+        family = Random.Range(int.MinValue, int.MaxValue);
         
     }
     public void Update()

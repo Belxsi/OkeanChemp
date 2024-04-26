@@ -6,6 +6,8 @@ public class Shooting : MonoBehaviour
 {
     public float bulletSpeed;
     public float lifeTime;
+    public float damage=15;
+    public int family=0;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,13 @@ public class Shooting : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Enemy>().life.Damage(damage);
+        }
+    }
     void Update()
     {
         
