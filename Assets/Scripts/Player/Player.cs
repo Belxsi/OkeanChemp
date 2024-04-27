@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
         {
             BaseFunc.AllLoadPrefab();
             Instantiate( BaseFunc.prefabs["DeadMenu"]);
+            gameObject.SetActive(false);
         }
     }
 }

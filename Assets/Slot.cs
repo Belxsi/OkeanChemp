@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour
 {
     public Item item;
-    public Sprite sprite;
+   
+    
     public Image sr;
     public TextMeshProUGUI counter;
     void Update()
@@ -16,8 +17,10 @@ public class Slot : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        sr.sprite = sprite;
+        sr.sprite = item.sprite;
+        
         counter.text = item.count+"";
+        
     }
     public void PointClick()
     {

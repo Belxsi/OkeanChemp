@@ -143,6 +143,7 @@ MonoBehaviour:
   item:
     count: 0
     name: apple
+    sprite: {fileID: 0}
 --- !u!1 &6285782558749054727
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +404,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &6285782560775938472
 MonoBehaviour:
